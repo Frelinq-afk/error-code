@@ -1,0 +1,15 @@
+2024-12-09 13:53:54,921 - DEBUG - connectionpool.py - 546 - https://api.telegram.org:443 "GET /bot" 400 84
+2024-12-09 13:53:54,922 - ERROR - telegramm.py - 81 - Ошибка API Telegram в get_user_id_from_username: A request to the Telegram API was unsuccessful. Error code: 400. Description: Bad Request: invalid user_id specified
+Traceback (most recent call last):
+  File "C:\Users\Dmitry\PycharmProjects\PythonProject\.venv\telegramm.py", line 69, in get_user_id_from_username
+    user = bot.get_chat_member(chat_id, f"@{username}")
+  File "C:\Users\Dmitry\PycharmProjects\PythonProject\.venv\Lib\site-packages\telebot\__init__.py", line 1654, in get_chat_member
+    apihelper.get_chat_member(self.token, chat_id, user_id)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Dmitry\PycharmProjects\PythonProject\.venv\Lib\site-packages\telebot\apihelper.py", line 412, in get_chat_member
+    return _make_request(token, method_url, params=payload)
+  File "C:\Users\Dmitry\PycharmProjects\PythonProject\.venv\Lib\site-packages\telebot\apihelper.py", line 168, in _make_request
+    json_result = _check_result(method_name, result)
+  File "C:\Users\Dmitry\PycharmProjects\PythonProject\.venv\Lib\site-packages\telebot\apihelper.py", line 195, in _check_result
+    raise ApiTelegramException(method_name, result, result_json)
+telebot.apihelper.ApiTelegramException: A request to the Telegram API was unsuccessful. Error code: 400. Description: Bad Request: invalid user_id specified
